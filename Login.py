@@ -5,6 +5,8 @@ import json
 from Tkinter import *
 
 import socket
+import os
+import sys
 
 class AlertBox(Frame):
 
@@ -101,6 +103,9 @@ class Application(Frame):
         Frame.__init__(self, master)
         self.grid()
         self.createWidgets()
+
+
+os.chdir(sys.path[0])
 
 readyToMoveOn = False
 while readyToMoveOn == False:
