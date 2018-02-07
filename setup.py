@@ -8,10 +8,15 @@
 # If everything works well you should find a subdirectory in the build
 # subdirectory that contains the files needed to run the script without Python
 
+import sys
 from cx_Freeze import setup, Executable
 
+base = None
+if sys.platform == "win32":
+    base = "Win32GUI"
+
 executables = [
-    Executable('Login.py', base = "Win32GUI"),
+    Executable('Login.py', base = base),
 ]
 
 setup(name='Login',
